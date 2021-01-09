@@ -20,7 +20,14 @@ namespace CSJar
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            ConnectJar.Excecute(textBox1.Text);
+            if (ConnectJar.Excecute(textBox1.Text))
+            {
+                MessageBox.Show("jar連携処理成功");
+            }
+            else
+            {
+                MessageBox.Show("jar連携処理失敗");
+            }
             button1.Enabled = true;
         }
     }

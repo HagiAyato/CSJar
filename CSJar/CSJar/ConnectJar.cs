@@ -21,19 +21,20 @@ namespace CSJar
             Process jar = null;
             try
             {
-                using (jar = Process.Start("javaw", "-jar Sample.jar"))
+                // .jarをプロセスとして起動
+                using (jar = Process.Start("java", "-jar Sample.jar " + msg))
                 {
                     // 終了待ち
                     jar.WaitForExit();
-                    // 結果取得
+                    // 結果取得(0:正常終了)
                     if (jar.ExitCode == 0) result = true;
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("例外発生\n"+e.Message);
+                MessageBox.Show("例外発生\n" + e.Message);
             }
             return result;
-        } 
+        }
     }
 }

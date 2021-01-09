@@ -1,0 +1,8 @@
+/**
+ *
+ */
+/**
+ * @author HagiAyato
+ *
+ */
+package javasrc;
